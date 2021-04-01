@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import ManageProductsDetails from '../ManageProductsDetails/ManageProductsDetails';
 
 const ManageProducts = () => {
+
+    const [products, setProducts] = useState([])
+    useEffect(() => {
+
+        fetch('https://lychee-pie-36175.herokuapp.com/products')
+            .then(res => res.json())
+            .then(data => setProducts(data))
+
+    }, [products])
+
     return (
         <div>
             <div class="ms-5">
@@ -14,7 +25,7 @@ const ManageProducts = () => {
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/home">Home</Link>
                                 </li>
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 text-dark ">
-                                    <Link style={{ textDecoration: 'none' }} className="text-success" to="/admin">Admin</Link>
+                                    <Link style={{ textDecoration: 'none' }} className="text-success" to="/admin">Add Products</Link>
                                 </li>
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 fw-bold">
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/manage">Manage Products</Link>
@@ -26,22 +37,13 @@ const ManageProducts = () => {
                 </nav>
             </div>
 
-            <table class="table">
-                <thead>
-                    <tr>
-                        <th scope="col">Description</th>
-                        <th scope="col">Quantity</th>
-                        <th scope="col">Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="fw-bolder">Mark</td>
-                        <td class="ps-4">1</td>
-                        <td class="fw-bolder">@mdo</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div>
+                <h1 className="text-center">You Have Total {products.length} Products ....!!!!!</h1>
+                {
+                    products.map(pd => <ManageProductsDetails pd={pd}></ManageProductsDetails>)
+                }
+            </div>
+
         </div>
     );
 };

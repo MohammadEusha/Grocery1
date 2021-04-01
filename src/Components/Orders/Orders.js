@@ -15,7 +15,7 @@ const Orders = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <h1>You have : {boughtProducts.length} bookings</h1>
+            <h1 className="mt-5 text-center">You Have Bought  {boughtProducts.length} Products....!!!!!</h1>
             {
                 boughtProducts.map(bought => <OrdersDetails bought={bought} ></OrdersDetails>)
             }

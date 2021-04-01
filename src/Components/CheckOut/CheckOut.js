@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import Navbar from '../Navbar/Navbar';
 import { useParams } from 'react-router';
 import { UserContext } from '../../App';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCartPlus } from '@fortawesome/free-solid-svg-icons'
 const CheckOut = () => {
     const { name } = useParams();
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
@@ -36,8 +38,8 @@ const CheckOut = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div >
-                <table class="table">
+            <div className="m-5 p-5" >
+                <table class="table table-hover table-striped table-secondary">
                     <thead>
                         <tr>
                             <th scope="col">Description</th>
@@ -53,7 +55,9 @@ const CheckOut = () => {
                         </tr>
                     </tbody>
                 </table>
-                <button onClick={addToCart}> Add To Cart</button>
+                <div className="col-md-12  d-flex justify-content-end">
+                    <button className="btn btn-success btn-lg" onClick={addToCart}><FontAwesomeIcon icon={faCartPlus} /> Add To Cart</button>
+                </div>
             </div>
 
         </div>

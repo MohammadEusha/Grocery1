@@ -42,9 +42,9 @@ const Login = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="text-center mt-5">
+            <div className="text-center mt-5 pt-5">
                 <h1>Please Click The Button To Login ...!!!!</h1>
-                <button onClick={handleGoogleSignIn} className="btn btn-success mt-1"><FontAwesomeIcon icon={faUserPlus} />Google SignIn </button>
+                <button onClick={handleGoogleSignIn} className="btn btn-success btn-lg mt-1"><FontAwesomeIcon icon={faUserPlus} /> Sign In With Google </button>
             </div>
         </div>
     );

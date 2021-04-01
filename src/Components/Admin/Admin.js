@@ -2,7 +2,6 @@ import axios from 'axios';
 import React, { useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import fakeData from '../FakeData/FakeData.json'
 
 const Admin = () => {
     const { handleSubmit, register } = useForm();
@@ -44,14 +43,6 @@ const Admin = () => {
                 console.log(error);
             });
     }
-
-    const handleAddProduct = () => {
-        fetch('https://lychee-pie-36175.herokuapp.com/addProducts', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(fakeData)
-        })
-    }
     return (
         <div >
             <div class="ms-5">
@@ -64,12 +55,11 @@ const Admin = () => {
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/home">Home</Link>
                                 </li>
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 text-dark ">
-                                    <Link style={{ textDecoration: 'none' }} className="text-success" to="/admin">Admin</Link>
+                                    <Link style={{ textDecoration: 'none' }} className="text-success" to="/admin">Add Products</Link>
                                 </li>
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 fw-bold">
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/manage">Manage Products</Link>
                                 </li>
-
                             </ul>
                         </div>
                     </div>
@@ -100,9 +90,6 @@ const Admin = () => {
                     <input class="mt-4 btn btn-success btn-lg " type="submit" />
                 </div>
             </form>
-            <div class="col-12 d-flex justify-content-center container">
-                <button onClick={handleAddProduct} className=" mt-5 btn btn-success btn-lg">Add Products</button>
-            </div>
         </div>
     );
 };
