@@ -4,7 +4,7 @@ const ProductInfo = (props) => {
     const { name, price } = props.product
     return (
         <div>
-            <table class="table">
+            <table className="table">
                 <thead>
                     <tr>
                         <th scope="col">Description</th>
@@ -14,9 +14,9 @@ const ProductInfo = (props) => {
                 </thead>
                 <tbody>
                     <tr>
-                        <td class="fw-bolder">{name}</td>
-                        <td class="ps-4">1</td>
-                        <td class="fw-bolder">{price}</td>
+                        <td className="fw-bolder">{name}</td>
+                        <td className="ps-4">1</td>
+                        <td className="fw-bolder">{price}</td>
                     </tr>
 
 

@@ -39,7 +39,7 @@ const CheckOut = () => {
         <div>
             <Navbar></Navbar>
             <div className="m-5 p-5" >
-                <table class="table table-hover table-striped table-secondary">
+                <table className="table table-hover table-striped table-secondary">
                     <thead>
                         <tr>
                             <th scope="col">Description</th>
@@ -49,9 +49,9 @@ const CheckOut = () => {
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="fw-bolder">{name}</td>
-                            <td class="ps-4 fw-bolder">{pdType && pdType.weight + 'Kg'}</td>
-                            <td class="fw-bolder">{pdType && pdType.price + '$'}</td>
+                            <td className="fw-bolder">{name}</td>
+                            <td className="ps-4 fw-bolder">{pdType && pdType.weight + 'Kg'}</td>
+                            <td className="fw-bolder">{pdType && pdType.price + '$'}</td>
                         </tr>
                     </tbody>
                 </table>

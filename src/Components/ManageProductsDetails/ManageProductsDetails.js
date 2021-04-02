@@ -17,11 +17,11 @@ const ManageProductsDetails = (props) => {
     }
     return (
         <div className="m-5">
-            <ul class="list-group">
-                <li class="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Product Name : {name} </span></li>
-                <li class="list-group-item "><span className="fw-bolder text-dark">Product Price : {price} $</span> </li>
-                <li class="list-group-item "><span className="fw-bolder text-dark">Product Weight : {weight} Kg</span> </li>
-                <li onClick={() => handleDelete(_id)} class="list-group-item "><span className="btn btn-outline-success fw-bolder text-dark"><FontAwesomeIcon icon={faTrashAlt} />  Delete Product</span></li>
+            <ul className="list-group">
+                <li className="list-group-item list-group-item-dark"><span className="fw-bolder text-dark">Product Name : {name} </span></li>
+                <li className="list-group-item "><span className="fw-bolder text-dark">Product Price : {price} $</span> </li>
+                <li className="list-group-item "><span className="fw-bolder text-dark">Product Weight : {weight} Kg</span> </li>
+                <li onClick={() => handleDelete(_id)} className="list-group-item "><span className="btn btn-outline-success fw-bolder text-dark"><FontAwesomeIcon icon={faTrashAlt} />  Delete Product</span></li>
 
             </ul>
         </div>

@@ -11,7 +11,7 @@ const Orders = () => {
         fetch('https://lychee-pie-36175.herokuapp.com/cart?email=' + loggedInUser.email)
             .then(res => res.json())
             .then(data => setBoughtProducts(data))
-    }, [])
+    }, [loggedInUser.email])
     return (
         <div>
             <Navbar></Navbar>

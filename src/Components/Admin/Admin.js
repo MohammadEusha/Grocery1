@@ -59,7 +59,7 @@ const Admin = () => {
     }
     return (
         <div >
-            <div class="ms-5">
+            <div className="ms-5">
                 <nav className="d-flex navbar navbar-expand-lg">
                     <div style={{ marginTop: '30px' }} className="container-fluid">
                         <h3 className="text-success">Grocery Store</h3>
@@ -84,25 +84,25 @@ const Admin = () => {
                 <h1>Add Products Here ....!!!!</h1>
             </div>
 
-            <form class="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
-                <div class="col-md-6">
-                    <label for="name" class="form-label"><h4>Product Name</h4></label>
-                    <input name="name" ref={register} class="form-control" id="inputEmail4" />
+            <form className="row mt-5 m-5" onSubmit={handleSubmit(onSubmit)}>
+                <div className="col-md-6">
+                    <label for="name" className="form-label"><h4>Product Name</h4></label>
+                    <input name="name" ref={register} className="form-control" id="inputEmail4" />
                 </div>
-                <div class="col-md-6">
-                    <label for="weight" class="form-label"><h4>Weight</h4></label>
-                    <input name="weight" class="form-control" ref={register} id="inputPassword4" />
+                <div className="col-md-6">
+                    <label for="weight" className="form-label"><h4>Weight</h4></label>
+                    <input name="weight" className="form-control" ref={register} id="inputPassword4" />
                 </div>
-                <div class="col-md-6 mt-3">
-                    <label for="Price" class="form-label"><h4>Price</h4></label>
-                    <input name="price" class="form-control" ref={register} id="inputEmail4" />
+                <div className="col-md-6 mt-3">
+                    <label for="Price" className="form-label"><h4>Price</h4></label>
+                    <input name="price" className="form-control" ref={register} id="inputEmail4" />
                 </div>
-                <div class="col-md-6 mt-3">
-                    <label for="weight" class="form-label"><h4>Insert File</h4></label>
-                    <input class="form-control" type="file" onChange={handleImageUpload} id="formFile" />
+                <div className="col-md-6 mt-3">
+                    <label for="weight" className="form-label"><h4>Insert File</h4></label>
+                    <input className="form-control" type="file" onChange={handleImageUpload} id="formFile" />
                 </div>
-                <div class="col-12 d-flex justify-content-end">
-                    <button class="mt-4 btn btn-success btn-lg " type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Product</button>
+                <div className="col-12 d-flex justify-content-end">
+                    <button className="mt-4 btn btn-success btn-lg " type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Product</button>
                 </div>
             </form>
         </div>

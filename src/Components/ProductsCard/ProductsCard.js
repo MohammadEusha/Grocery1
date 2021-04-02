@@ -21,15 +21,15 @@ const ProductsCard = (props) => {
 
     return (
         <div style={cardStyle} className="d-flex justify-content-lg-center">
-            <div class="card" style={{ width: "290px", height: "420px" }}>
+            <div className="card" style={{ width: "290px", height: "420px" }}>
                 <div>
-                    <img src={image} class="card-img-top img-fluid img-thumbnail" alt="..." />
+                    <img src={image} className="card-img-top img-fluid img-thumbnail" alt="..." />
                 </div>
-                <div class="card-body">
+                <div className="card-body">
                     <h5>{name} : {weight} Kg</h5>
                     <div className="d-flex mt-3">
                         <h3 className="text-success">${price}</h3>
-                        <button style={{ marginLeft: '70px', width: '130px' }} type="button" onClick={() => handleBuy(name)} class="btn btn-success align-items-end"><FontAwesomeIcon icon={faCartPlus} />  Buy Now</button>
+                        <button style={{ marginLeft: '70px', width: '130px' }} type="button" onClick={() => handleBuy(name)} className="btn btn-success align-items-end"><FontAwesomeIcon icon={faCartPlus} />  Buy Now</button>
                     </div>
 
                 </div>

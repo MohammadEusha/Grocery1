@@ -23,15 +23,15 @@ const Home = () => {
                                 <div>
                                     <h1>Your Requested Page Is Loading.Please Wait For Few Seconds...!!!!!</h1>
                                 </div>
-                                <div class="d-flex justify-content-center mt-5">
-                                    <div style={{ height: '100px', width: "100px" }} class="spinner-border" role="status">
-                                        <span class="visually-hidden">Loading...</span>
+                                <div className="d-flex justify-content-center mt-5">
+                                    <div style={{ height: '100px', width: "100px" }} className="spinner-border" role="status">
+                                        <span className="visually-hidden">Loading...</span>
                                     </div>
                                 </div>
                             </div>
                         }
                         {
-                            products.map(product => <ProductsCard product={product} ></ProductsCard>)
+                            products.map(product => <ProductsCard product={product}></ProductsCard>)
                         }
                     </div>
                 </div>

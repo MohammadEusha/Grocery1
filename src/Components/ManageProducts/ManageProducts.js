@@ -26,7 +26,7 @@ const ManageProducts = () => {
 
     return (
         <div>
-            <div class="ms-5">
+            <div className="ms-5">
                 <nav className="d-flex navbar navbar-expand-lg">
                     <div style={{ marginTop: '30px' }} className="container-fluid">
                         <h3 className="text-success">Grocery Store</h3>
