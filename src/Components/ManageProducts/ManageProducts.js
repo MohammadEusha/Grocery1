@@ -1,8 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
 import ManageProductsDetails from '../ManageProductsDetails/ManageProductsDetails';
 
 const ManageProducts = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    let display;
+    if (loggedInUser) {
+        display = <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2">
+            {loggedInUser.name}
+        </li>
+    }
+
 
     const [products, setProducts] = useState([])
     useEffect(() => {
@@ -21,6 +32,7 @@ const ManageProducts = () => {
                         <h3 className="text-success">Grocery Store</h3>
                         <div className="d-flex flex-row-reverse" id="navbarNav">
                             <ul className="navbar-nav justify-content-end ms-5">
+                                {display}
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 text-dark ">
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/home">Home</Link>
                                 </li>
@@ -38,7 +50,7 @@ const ManageProducts = () => {
             </div>
 
             <div>
-                <h1 className="text-center">You Have Total {products.length} Products ....!!!!!</h1>
+                <h1 className="text-center">You Total Have {products.length} Products ....!!!!!</h1>
                 {
                     products.map(pd => <ManageProductsDetails pd={pd}></ManageProductsDetails>)
                 }

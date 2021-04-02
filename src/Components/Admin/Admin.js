@@ -1,9 +1,23 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlusCircle } from '@fortawesome/free-solid-svg-icons'
+import { UserContext } from '../../App';
 
 const Admin = () => {
+
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    let display;
+    if (loggedInUser) {
+        display = <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2">
+            {loggedInUser.name}
+        </li>
+    }
+
+
     const { handleSubmit, register } = useForm();
     const [imageURL, setImageURL] = useState(null)
 
@@ -51,6 +65,7 @@ const Admin = () => {
                         <h3 className="text-success">Grocery Store</h3>
                         <div className="d-flex flex-row-reverse" id="navbarNav">
                             <ul className="navbar-nav justify-content-end ms-5">
+                                {display}
                                 <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 text-dark ">
                                     <Link style={{ textDecoration: 'none' }} className="text-success" to="/home">Home</Link>
                                 </li>
@@ -87,7 +102,7 @@ const Admin = () => {
                     <input class="form-control" type="file" onChange={handleImageUpload} id="formFile" />
                 </div>
                 <div class="col-12 d-flex justify-content-end">
-                    <input class="mt-4 btn btn-success btn-lg " type="submit" />
+                    <button class="mt-4 btn btn-success btn-lg " type="submit" ><FontAwesomeIcon icon={faPlusCircle} />  Add Product</button>
                 </div>
             </form>
         </div>

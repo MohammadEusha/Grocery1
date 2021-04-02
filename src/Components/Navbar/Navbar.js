@@ -1,9 +1,19 @@
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserPlus } from '@fortawesome/free-solid-svg-icons'
+import { UserContext } from '../../App';
 
 const Navbar = () => {
 
+    const [loggedInUser, setLoggedInUser] = useContext(UserContext)
+
+    let display;
+    if (loggedInUser) {
+        display = <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2">
+            {loggedInUser.name}
+        </li>
+    }
 
 
 
@@ -14,6 +24,7 @@ const Navbar = () => {
                     <h3 className="text-success">Grocery Store</h3>
                     <div className="d-flex flex-row-reverse" id="navbarNav">
                         <ul className="navbar-nav justify-content-end">
+                            {display}
                             <li style={{ marginLeft: '50px', fontWeight: 'bold' }} className="nav-item pt-2 text-dark ">
                                 <Link style={{ textDecoration: 'none' }} className="text-success" to="/home">Home</Link>
                             </li>

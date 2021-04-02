@@ -14,14 +14,14 @@ const Home = () => {
     return (
         <div>
             <Navbar></Navbar>
-            <div className="container ">
+            <div className="container mt-5 ">
                 <div className="row ">
-                    <div style={{ marginLeft: '125px' }} className="col-md">
+                    <div className="col-md">
                         {
                             products.length === 0 &&
                             <div className="mt-5">
                                 <div>
-                                    <h2>Your Requested Page Is Loading.Please Wait For Few Seconds...!!!!!</h2>
+                                    <h1>Your Requested Page Is Loading.Please Wait For Few Seconds...!!!!!</h1>
                                 </div>
                                 <div class="d-flex justify-content-center mt-5">
                                     <div style={{ height: '100px', width: "100px" }} class="spinner-border" role="status">
