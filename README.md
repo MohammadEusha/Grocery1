@@ -26,7 +26,7 @@ The Website is about your daily grocery products.In this site you will at first 
 
 ### Technology :-
 
-• Frontend : HTML , CSS, Bootstrap, JavaScript, React JS
+• Frontend : CSS, Bootstrap, JavaScript, React JS
 
 • Backend : NodeJS, Express, Postman, Mongo DB.
 
